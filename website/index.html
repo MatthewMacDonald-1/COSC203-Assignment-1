@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birds of Aotearoa</title>
+    <!-- CSS -->
+    <link href="assets/style/main.css" rel="stylesheet" type="text/css">
+    <link href="assets/style/filter_controls.css" rel="stylesheet" type="text/css">
+    <link href="assets/style/item_pane.css" rel="stylesheet" type="text/css">
+
+    <script src="assets/scripts/main.js" defer></script>
+    <script src="assets/scripts/item-data-manager.js" defer></script>
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/clipart-kiwi-logo/kiwi-bird-logo.svg">
+</head>
+<body onscroll="headerResize(),checkHeight()" onload="checkHeight()">
+    <header class="" id="main_header">
+        <div id="header_content">   
+            <img src="assets/images/clipart-kiwi-logo/kiwi-bird-logo.svg" alt="Birds of Aotearoa logo"><h1>Birds of Aotearoa</h1>
+        </div>
+        
+    </header>
+    <div id="main_content">
+        <div id="mobile_control_panel">
+            <span class="pop_out_btn">
+                <span id="animated_arrow" class="">❯</span>
+            </span>
+
+            <table class="cons_status_key" id="cons_status_key_el">
+                <tr><td>
+                    <span class="dot_over"><span class="color_id csc_not_threatened-bg"></span></span>
+                </td><td>Not Threatened</td></tr>
+                <tr><td>
+                    <span class="dot_over"><span class="color_id csc_naturally_uncommon-bg"></span></span>
+                </td><td>Naturally Uncommon</td></tr>
+                <tr><td>
+                    <span class="dot_over"><span class="color_id csc_relict-bg"></span></span>
+                </td><td>Relict</td></tr>
+                <tr><td>
+                    <span class="dot_over"><span class="color_id csc_recovering-bg"></span></span>
+                </td><td>Recovering</td></tr>
+                <tr><td>
+                    <span class="dot_over"><span class="color_id csc_declining-bg"></span></span>
+                </td><td>Declining</td></tr>
+                <tr><td>
+                    <span class="dot_over"><span class="color_id csc_nationally_increasing-bg"></span></span>
+                </td><td>Nationally Increasing</td></tr>
+                <tr><td>
+                    <span class="dot_over"><span class="color_id csc_nationally_vulnerable-bg"></span></span>
+                </td><td>Nationally Vulnerable</td></tr>
+                <tr><td>
+                    <span class="dot_over"><span class="color_id csc_nationally_endangered-bg"></span></span>
+                </td><td>Nationally Endangered</td></tr>
+                <tr><td>
+                    <span class="dot_over"><span class="color_id csc_nationally_critical-bg"></span></span>
+                </td><td>Nationally Critical</td></tr>
+                <tr><td>
+                    <span class="dot_over"><span class="color_id csc_extinct-bg"></span></span>
+                </td><td>Extinct</td></tr>
+                <tr><td>
+                    <span class="dot_over"><span class="color_id csc_data_deficient-bg"></span></span>
+                </td><td>Data Deficient</td></tr>
+            </table>
+        </div><div id="controls" class="vis_disabled">
+            <form id="controls_form">
+                <div class="section">
+                    <label class="header">Search</label>
+                    <input type="text" placeholder="Search" id="text_search_all_fields">
+                </div>
+
+                <hr>
+
+                <div class="section">
+                    <label class="header">Filter By</label>
+
+                    <label>Family</label>
+                    <select id="filter_family">
+                        <option>All</option> <!-- Default Option -->
+                        <option>Acanthisittidae</option>
+                        <option>Acanthizidae</option>
+                        <option>Anatidae</option>
+                        <option>Apterygidae</option>
+                        <option>Ardeidae</option>
+                        <option>Callaeidae</option>
+                        <option>Charadriidae</option>
+                        <option>Columbidae</option>
+                        <option>Cuculidae</option>
+                        <option>Diomedeidae</option>
+                        <option>Falconidae</option>
+                        <option>Haematopodidae</option>
+                        <option>Halcyonidae</option>
+                        <option>Laridae</option>
+                        <option>Locustellidae</option>
+                        <option>Meliphagidae</option>
+                        <option>Mohouidae</option>
+                        <option>Motacillidae</option>
+                        <option>Notiomystidae</option>
+                        <option>Petroicidae</option>
+                        <option>Phalacrocoracidae</option>
+                        <option>Psittaculidae</option>
+                        <option>Rallidae</option>
+                        <option>Recurvirostridae</option>
+                        <option>Rhipiduridae</option>
+                        <option>Scolopacidae</option>
+                        <option>Spheniscidae</option>
+                        <option>Strigidae</option>
+                        <option>Strigopidae</option>
+                        <option>Zosteropidae</option>
+                    </select>
+
+                    <label>Order</label>
+                    <select id="filter_order">
+                        <option>All</option> <!-- Default Option -->
+                        <option>Anseriformes</option>
+                        <option>Apterygiformes</option>
+                        <option>Charadriiformes</option>
+                        <option>Columbiformes</option>
+                        <option>Coraciiformes</option>
+                        <option>Cuculiformes</option>
+                        <option>Falconiformes</option>
+                        <option>Gruiformes</option>
+                        <option>Passeriformes</option>
+                        <option>Pelecaniformes</option>
+                        <option>Procellariiformes</option>
+                        <option>Psittaciformes</option>
+                        <option>Sphenisciformes</option>
+                        <option>Strigiformes</option>
+                        <option>Suliformes</option>
+                    </select>
+
+                    <label>Conservation Status</label>
+                    <select id="filter_consStatus">
+                        <option selected>All</option> <!-- Default Option -->
+                        <option>Not Threatened</option>
+                        <option>Naturally Uncommon</option>
+                        <option>Relict</option>
+                        <option>Recovering</option>
+                        <option>Declining</option>
+                        <option>Nationally Increasing</option>
+                        <option>Nationally Vulnerable</option>
+                        <option>Nationally Endangered</option>
+                        <option>Nationally Critical</option>
+                        <option>Extinct</option>
+                        <option>Data Deficient</option>
+                    </select>
+                </div>
+
+                <hr>
+
+                <div class="section">
+                    <label class="header">Sort By</label>
+                    <select id="sort_byFeild">
+                        <!-- <option></option> Blank Option -->
+                        <option value="0" selected>Maori Name Ascending</option>
+                        <option value="1">Maori Name Descending</option>
+                        <option value="2">English Name Ascending</option>
+                        <option value="3">English Name Descending</option>
+                        <option value="4">Scientific Name Ascending</option>
+                        <option value="5">Scientific Name Descending</option>
+                        <option value="6">Order Ascending</option>
+                        <option value="7">Order Descending</option>
+                        <option value="8">Family Ascending</option>
+                        <option value="9">Family Descending</option>
+                        <option value="10">Conservation Status Severity Ascending</option>
+                        <option value="11">Conservation Status Severity Descending</option>
+                        <option value="12">Length Ascending</option>
+                        <option value="13">Length Descending</option>
+                        <option value="14">Weight Ascending</option>
+                        <option value="15">Weight Descending</option>
+                    </select>
+                </div>
+
+                <button id="filter_results_btn">Filter Results</button>
+                <button id="clear_all_fields_btn">Clear All Fields</button>
+            </form>
+        </div><div class="item_pane_cont">
+            <div id="item_pane">
+            </div>
+        </div>
+    </div>
+    <footer id="main_footer" class="">
+        <p>
+            Data licensed from <a href="https://www.birdsnz.org.nz/" target="_blank">Birds New Zealand</a> for educational use within the University of Otago.
+        </p>
+    </footer>
+</body>
+</html>

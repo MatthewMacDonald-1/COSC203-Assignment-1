@@ -1,0 +1,244 @@
+:root {
+    --main-bg-color: #ffffff;
+    --main-text-color: #000000;
+
+    --accent-bg-color: #0073a8;
+    --accent-text-color: #ffffff;
+
+    /* Conservation status colors */
+    --csc-not-threatened: #02a028;
+    --csc-naturally-uncommon: #649a31;
+    --csc-relict: #99cb68;
+    --csc-recovering: #fecc33;
+    --csc-declining: #fe9a01;
+    --csc-nationally-increasing: #c26967;
+    --csc-nationally-vulnerable: #9b0000;
+    --csc-nationally-endangered: #660032;
+    --csc-nationally-critical: #320033;
+    --csc-extinct: #000000;
+    --csc-data-deficient: #000000;
+
+    /* Card border-radius */
+    --item-card-border-radius: 10px;
+
+    --item-card-image-bg: #a7a7a7;
+    --item-card-description-bg: #fafafa;
+    --item-card-description-text: #000000;
+}
+
+.item_card {
+    border-radius: var(--item-card-border-radius);
+    display: inline-block;
+    width: 320px;
+    height: 440px;
+    margin: auto;
+    background-color: white;
+    position: static;
+    box-shadow: 2px 2px 3px 3px #efefef;
+}
+
+.item_card .image_container {
+    display: block;
+    width: inherit;
+    overflow: hidden;
+    position: static;
+    border-radius: var(--item-card-border-radius) var(--item-card-border-radius) 0 0;
+    height: 170px;
+    background-color: var(--item-card-image-bg);
+}
+
+.item_card .image_container img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: auto;
+    object-fit: cover;
+}
+
+.item_card .image_container span {
+    position: relative;
+    top: -7px;
+    left: 7px;
+    display: block;
+    width: 200px;
+    height: fit-content;
+    color: #ffffff;
+    font-size: 12px;
+    transform: translate(0, -100%);
+    z-index: 98;
+}
+
+.item_card .image_container span .camera_logo {
+    height: 16px;
+    width: 12px;
+    object-fit: contain;
+    margin: 0 5px 2px 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.item_card .description {
+    border-radius: 0 0 var(--item-card-border-radius) var(--item-card-border-radius);
+    height: 270px;
+    background-color: var(--item-card-description-bg);
+    position: static;
+}
+
+.item_card .description .item_card_name {
+    /* background-color: burlywood; */
+    width: calc(100% - 20px);
+    margin: 5px 10px 10px;
+}
+
+.item_card .description .item_card_name span {
+    display: block;
+}
+
+.item_card .description .item_card_name hr {
+    margin: 2px 0 3px;
+    width: 40px;
+}
+
+.item_card .description table {
+    display: block;
+    margin: 10px 10px;
+    width: calc(100% - 20px);
+    border-collapse: collapse;
+}
+
+.item_card .description table tr:not(:first-of-type) td {
+    border-top: 1px solid #cecece;
+    border-bottom: 1px solid #cecece;
+}
+
+.item_card .description table tr:last-of-type td {
+    border-bottom: none;
+}
+
+.item_card .description table tr td {
+    padding: 5px 0;
+}
+
+.item_card .description table tr td:first-of-type {
+    padding-right: 10px;
+    width: 112px;
+    border-right: 1px solid #cecece;
+}
+.item_card .description table tr td:nth-of-type(2) {
+    padding-left: 10px;
+    width: 188px;
+}
+
+.item_card .dot_over {
+    position: relative;
+    top: -322.5px;
+    right: -280px;
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: var(--item-card-description-bg);
+    transform: translate(-50%, 50%);
+    border-radius: 50%;
+}
+
+.item_card .dot_over .color_id {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    display: block;
+    width: calc(100% - 7.5px);
+    height: calc(100% - 7.5px);
+    transform: translate(50%, -50%);
+    border-radius: 50%;
+}
+
+/* Id colors */
+
+.csc_not_threatened-bg {
+    background-color: var(--csc-not-threatened);
+}
+
+.csc_naturally_uncommon-bg {
+    background-color: var(--csc-naturally-uncommon);
+}
+
+.csc_relict-bg {
+    background-color: var(--csc-relict);
+}
+
+.csc_recovering-bg {
+    background-color: var(--csc-recovering);
+}
+
+.csc_declining-bg {
+    background-color: var(--csc-declining);
+}
+
+.csc_nationally_increasing-bg {
+    background-color: var(--csc-nationally-increasing);
+}
+
+.csc_nationally_vulnerable-bg {
+    background-color: var(--csc-nationally-vulnerable);
+}
+
+.csc_nationally_endangered-bg {
+    background-color: var(--csc-nationally-endangered);
+}
+
+.csc_nationally_critical-bg {
+    background-color: var(--csc-nationally-critical);
+}
+
+.csc_extinct-bg {
+    background-color: var(--csc-extinct);
+}
+
+.csc_data_deficient-bg {
+    background-color: var(--csc-data-deficient);
+}
+
+/* text */
+.csc_not_threatened-text {
+    color: var(--csc-not-threatened);
+}
+
+.csc_naturally_uncommon-text {
+    color: var(--csc-naturally-uncommon);
+}
+
+.csc_relict-text {
+    color: var(--csc-relict);
+}
+
+.csc_recovering-bg {
+    color: var(--csc-recovering);
+}
+
+.csc_declining-text {
+    color: var(--csc-declining);
+}
+
+.csc_nationally_increasing-text {
+    color: var(--csc-nationally-increasing);
+}
+
+.csc_nationally_vulnerable-text {
+    color: var(--csc-nationally-vulnerable);
+}
+
+.csc_nationally_endangered-text {
+    color: var(--csc-nationally-endangered);
+}
+
+.csc_nationally_critical-text {
+    color: var(--csc-nationally-critical);
+}
+
+.csc_extinct-text {
+    color: var(--csc-extinct);
+}
+
+.csc_data_deficient-text {
+    color: var(--csc-data-deficient);
+}
